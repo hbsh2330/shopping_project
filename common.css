@@ -1,0 +1,19 @@
+body {
+    width: 100% !important;
+    min-width: 320px !important;
+    background: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    font-size: 13px;
+}
+ul{
+    padding: 0px;
+}

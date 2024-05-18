@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        * {}
+
+        #wrap {
+            position: relative;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        #header {
+            display: block;
+            z-index: 101;
+            position: relative;
+            width: 100%;
+            transition: all .3s ease;
+        }
+
+        #header>.top_header {
+            position: relative;
+            z-index: 100;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+        }
+
+        .inner {
+            position: relative;
+            width: 100%;
+            max-width: 1260px;
+            height: 40px;
+            margin: 0 auto;
+        }
+
+        .top_menu {
+            position: relative;
+            z-index: 10;
+            float: right;
+            margin: 0 .7% 0 0;
+            letter-spacing: -1px;
+            font-size: 0;
+        }
+
+        .top_menu>li {
+            display: inline-block;
+            position: relative;
+            font-size: 0;
+        }
+
+        .top_menu>li>a {
+            line-height: 40px;
+            padding: 0 10px;
+        }
+
+        .top_menu>a {
+            display: block;
+            height: 28px;
+            line-height: 28px;
+            color: #333;
+            font-size: 13px;
+            letter-spacing: 0;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .submenu {
+            background-color: white;
+            position: absolute;
+            top: 35px;
+            width: 100%;
+            display: none;
+        }
+        .bar {
+            top: 51px; 
+        }
+
+        .submenu>li>a {
+            line-height: 40px;
+            padding: 0 10px;
+        }
+
+        li>a {
+            display: block;
+        }
+
+        .submenu>li {
+            height: 35px;
+            line-height: 35px;
+        }
+
+        li:hover .submenu {
+            display: block;
+        }
+
+        .inner>a>.logo {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .imtc {
+            position: relative;
+            z-index: 10;
+            float: right;
+            margin: 0 .7% 0 0;
+            letter-spacing: -4px;
+            font-size: 0;
+        }
+
+        .imtc>li {
+            display: inline-block;
+            position: relative;
+            font-size: 0;
+        }
+
+        .imtc>li>a {
+            line-height: 40px;
+            padding: 0 10px;
+        }
+
+        .imtc>li>a>img {
+            width: 80%;
+        }
+
+        .part02 {
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+        }
+
+        .inner>.search {
+            position: relative;
+            z-index: 10;
+            float: right;
+            margin: 0 1% 0 0;
+            letter-spacing: -1px;
+            position: relative;
+            height: 33px;
+            border: 0;
+            border-radius: 40px;
+            background-color: rgb(240, 240, 240)
+        }
+
+        .menu_bar {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid rgba(0, 0, 0, .08);
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+            background: #fff267;
+            color: #113;
+        }
+
+        .menu_bar>.inner>.menu_ctgr {
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            font-size: 0;
+            bottom: 10px;
+        }
+
+        .menu_bar>.inner>.menu_ctgr>li {
+            display: inline-block;
+            position: relative;
+            font-size: 0;
+        }
+
+        .menu_bar>.inner>.menu_ctgr>li>a {
+            line-height: 51px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        input[id="menuicon"]{
+            display: none;
+        }
+        input[id="menuicon"] + label {
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+        input[id="menuicon"] + label span {
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            border-radius: 30px;
+            background-color: #000;
+            transition: all .35s;
+        }
+        input[id="menuicon"] + label span:nth-child(1){
+            top: 0;
+        }
+        input[id="menuicon"] + label span:nth-child(2){
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        input[id="menuicon"] + label span:nth-child(3){
+            bottom: 0;
+        }
+        input[id="menuicon"]:checked + label span:nth-child(1){
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        input[id="menuicon"]:checked + label span:nth-child(2) {
+            opacity: 0;
+        }
+        input[id="menuicon"]:checked + label span:nth-child(3){
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+    </style>
+</head>
+<div>
+    <img class="top_banner" src="img/건강풀때기.png" alt="banner">
+</div>
+<header id="wrapper">
+    <div id="header">
+        <div class="top_header">
+            <div class="inner">
+                <ul class="top_menu">
+                    <li>
+                        <a href="">로그인</a>
+                    </li>
+                    <li>
+                        <a href="">마이페이지</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="">장바구니</a>
+                            </li>
+                            <li>
+                                <a href="">주문조회</a>
+                            </li>
+                            <li>
+                                <a href="">좋아요</a>
+                            </li>
+                            <li>
+                                <a href="">후기</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">정보수정</a>
+                    </li>
+                    <li>
+                        <a href="">고객센터</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header">
+            <div class="inner part02">
+                <a href="">
+                    <img class="logo" src="img/건강풀때기로고.png" alt="logo">
+                </a>
+                <ul class="imtc">
+                    <li>
+                        <a href="">
+                            <img src="https://cdn-tgreen.bizhost.kr/4xr_20200429/images/ico_cart.png" alt="cart">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://cdn-tgreen.bizhost.kr/4xr_20200429/images/ico_mypage1.png" alt="myPage">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://cdn-tgreen.bizhost.kr/4xr_20200429/images/ico_like.png" alt="like">
+                        </a>
+                    </li>
+                </ul>
+                <input class="search" type="search">
+            </div>
+        </div>
+    </div>
+    <div class="menu_bar">
+        <div class="inner">
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="menu_ctgr">
+                <li>
+                    <a href="">로그인</a>
+                </li>
+                <li>
+                    <a href="">마이페이지</a>
+                    <ul class="submenu bar">
+                        <li>
+                            <a href="">장바구니</a>
+                        </li>
+                        <li>
+                            <a href="">주문조회</a>
+                        </li>
+                        <li>
+                            <a href="">좋아요</a>
+                        </li>
+                        <li>
+                            <a href="">후기</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">정보수정</a>
+                </li>
+                <li>
+                    <a href="">고객센터</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+</html>
