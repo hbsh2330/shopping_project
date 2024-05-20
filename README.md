@@ -47,7 +47,11 @@ API 요청에 대해 응답할 때는 항상 HTTP 상태 코드를 포함해야 
 | /users/{Id} | PATCH         | 특정 회원 정보를 수정합니다. |
 | /users/{Id} | DELETE        | 특정 회원을 삭제합니다.  |
 | /products/{Id} | GET         | 특정 물건을 조회합니다.  |
-| /productReview | POST | 상품 리뷰를 작성합니다. |
+| /productReviews | POST | 상품 리뷰를 작성합니다. |
+| /productReviews/{Id} | GET | 특정 상품리뷰를 조회합니다. |
+| /productReviews/{Id} | PATCH | 특정 상품리뷰를 수정합니다. |
+| /productReviews/{Id} | DELETE | 특정 상품리뷰를 삭제합니다. |
+
 
 관리자 기능
 | URI                | REQUEST METHOD | DESCRIPTION                  |
