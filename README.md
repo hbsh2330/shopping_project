@@ -38,7 +38,7 @@ API 요청에 대해 응답할 때는 항상 HTTP 상태 코드를 포함해야 
 같은 식으로, 게시물들은 각자의 댓글들을 가지고 있기 때문에 댓글을 받아오는 엔드포인트는 https://mysite.com/posts/postId/comments 정도면 될 것 같습니다.
 
 그렇다고 3단계 이상을 중첩하면 가독성이 떨어지기 때문에 너무 많이 중첩하지 않는 것이 좋습니다.
-
+|---|---|---|
 |URI|REQUEST METHOD|DESCRIPTION|
 |/users|POST|회원가입|
 |/users{userId}|GET|특정 회원조회|
