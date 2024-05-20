@@ -38,40 +38,12 @@ API 요청에 대해 응답할 때는 항상 HTTP 상태 코드를 포함해야 
 같은 식으로, 게시물들은 각자의 댓글들을 가지고 있기 때문에 댓글을 받아오는 엔드포인트는 https://mysite.com/posts/postId/comments 정도면 될 것 같습니다.
 
 그렇다고 3단계 이상을 중첩하면 가독성이 떨어지기 때문에 너무 많이 중첩하지 않는 것이 좋습니다.
-|---|---|---|
+
+
 |URI|REQUEST METHOD|DESCRIPTION|
-|/users|POST|회원가입|
-|/users{userId}|GET|특정 회원조회|
-|/users{userId}|PATCH|특정 회원수정|
-|/users{userId}|DELETE|특정 회원삭제|
+|/users|POST|새로운 회원을 생성합니다.|
+|/users{userId}|GET|특정 회원을 조회합니다.|
+|/users{userId}|PATCH|특정 회원 정보를 수정합니다.|
+|/users{userId}|DELETE|특정 회원을 삭제합니다.|
 
 
-|---|---|---|---|---|
-|/user/delete|---|---|---|---|
-|/user/info|---|---|---|---|
-|/user/join/businessMan|---|---|---|---|
-|/user/join|---|---|---|---|
-|/user/join/user|---|---|---|---|
-|/user/login|---|---|---|---|
-|/user/logout|---|---|---|---|
-|/user/update|---|---|---|---|
-|---|---|---|---|---|
-|/item/businessMan/add|---|---|---|---|
-|/item/businessMan/delete|---|---|---|---|
-|/item/businessMan/info|---|---|---|---|
-|/item/businessMan/list|---|---|---|---|
-|/item/businessMan/update|---|---|---|---|
-|/item/info|---|---|---|---|
-|/item/list|---|---|---|---|
-
-회원가입 (Create)
-HTTP Method: POST
-URL: /users
-설명: 새로운 회원을 생성합니다.
-
-회원조회 (Read)
-모든 회원 조회
-
-HTTP Method: GET
-URL: /users
-설명: 모든 회원의 목록을 조회합니다.
